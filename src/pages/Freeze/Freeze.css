@@ -1,115 +1,77 @@
-/* --- Color Theme: Emerald + Slate --- */
-:root {
-  --emerald: #059669;
-  --emerald-light: #10b981;
-  --slate-dark: #0f172a;
-  --slate-medium: #1e293b;
-  --slate-light: #334155;
-  --text-light: #e2e8f0;
-  --text-muted: #94a3b8;
-  --danger: #ef4444;
-  --ice: #38bdf8;
-}
-
-/* --- Container --- */
-.status-container {
- height: 100vh;
-  width: 95vw;
-  background-color: var(--slate-dark);
+/* ✅ Main container styling */
+.freeze-container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #0f172a; /* Slate-900 */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-}
-
-/* --- Card --- */
-.status-card {
-  background-color: var(--slate-medium);
-  padding: 40px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.3);
   text-align: center;
-  color: var(--text-light);
-}
-
-/* --- Title --- */
-.status-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--emerald-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 25px;
-}
-
-.status-icon {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.status-icon.frozen {
-  color: var(--ice);
-}
-
-.status-icon.unfrozen {
-  color: var(--emerald-light);
-}
-
-/* --- Status Text --- */
-.status-indicator {
-  background-color: var(--slate-light);
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 25px;
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
-}
-
-.status-text {
-  font-size: 1.2rem;
-  font-weight: 500;
-  transition: color 0.4s ease, transform 0.4s ease;
-}
-
-.frozen-text {
-  color: var(--ice);
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
-}
-
-.unfrozen-text {
-  color: var(--emerald-light);
-  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
-}
-
-/* --- Button --- */
-.status-btn {
-  border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
+  font-family: "Poppins", sans-serif;
   color: white;
-  transition: all 0.3s ease;
+  padding: 2rem;
+}
+
+/* ✅ Title */
+.freeze-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #10b981; /* Emerald-500 */
+  margin-bottom: 1.5rem;
+}
+
+/* ✅ Card box */
+.freeze-card {
+  background-color: #1e293b; /* Slate-800 */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   width: 100%;
+  max-width: 400px;
 }
 
-.unfreeze-btn {
-  background-color: var(--emerald);
+/* ✅ Input field */
+.freeze-input {
+  width: 92%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #334155; /* Slate-700 */
+  color: white;
+  font-size: 1rem;
 }
 
-.unfreeze-btn:hover {
-  background-color: var(--emerald-light);
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+.freeze-input::placeholder {
+  color: #94a3b8; /* Slate-400 */
 }
 
+.freeze-input:focus {
+  outline: 2px solid #10b981; /* Emerald-500 */
+}
+
+/* ✅ Button */
 .freeze-btn {
-  background-color: var(--danger);
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #10b981; /* Emerald-500 */
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .freeze-btn:hover {
-  background-color: #f87171;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  background-color: #059669; /* Emerald-600 */
+  transform: scale(1.02);
+}
+
+/* ✅ Message */
+.freeze-message {
+  margin-top: 1rem;
+  color: #cbd5e1; /* Slate-300 */
+  font-size: 0.9rem;
 }

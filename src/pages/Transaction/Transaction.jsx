@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Transaction.css";
 import { Eye, EyeOff, Send } from "lucide-react";
 import {Link} from 'react-router-dom'
 
+
 const Transaction = () => {
+  
   const [formData, setFormData] = useState({
     senderMobile: "",
     receiverMobile: "",
@@ -21,6 +23,7 @@ const Transaction = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Transaction Submitted:\n" + JSON.stringify(formData, null, 2));
+   
   };
 
   return (
