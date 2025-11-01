@@ -1,0 +1,119 @@
+/* --- Color Theme: Emerald + Slate --- */
+:root {
+  --emerald: #059669;
+  --emerald-light: #10b981;
+  --slate-dark: #0f172a;
+  --slate-medium: #1e293b;
+  --slate-light: #334155;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+}
+
+/* --- Container --- */
+.transaction-container {
+  min-height: 75vh;
+  width: 95vw;
+  background-color: var(--slate-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  
+}
+
+/* --- Form Card --- */
+.form-card {
+  background-color: var(--slate-medium);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.3);
+  color: var(--text-light);
+}
+
+/* --- Title --- */
+.form-title {
+  text-align: center;
+  color: var(--emerald-light);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.send-icon {
+  color: var(--emerald-light);
+}
+
+/* --- Form --- */
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.transaction-form label {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.transaction-form input {
+  background-color: var(--slate-light);
+  border: none;
+  outline: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.transaction-form input:focus {
+  border: 1px solid var(--emerald-light);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+/* --- T-PIN container --- */
+.tpin-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.eye-btn:hover {
+  color: var(--emerald-light);
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+  background-color: var(--emerald);
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--emerald-light);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}

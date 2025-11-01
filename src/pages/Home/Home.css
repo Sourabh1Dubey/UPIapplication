@@ -1,0 +1,86 @@
+/* --- Color Theme: Emerald + Slate --- */
+:root {
+  --emerald: #059669;
+  --slate-dark: #0f172a;
+  --slate-medium: #1e293b;
+  --slate-light: #334155;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+}
+
+/* --- Base Container --- */
+.landing-container {
+  min-height: 88vh;
+  width: 97vw;
+  background-color: var(--slate-dark);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* --- Header --- */
+.landing-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--emerald);
+  margin-bottom: 15px;
+}
+
+.landing-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+
+/* --- Icon Grid --- */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* --- Icon Card --- */
+.icon-card {
+  background-color: var(--slate-medium);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.4);
+}
+
+/* --- Icon --- */
+.icon {
+  color: var(--emerald);
+  margin-bottom: 15px;
+}
+
+/* --- Text --- */
+.icon-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.icon-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+.landing-footer {
+  margin-top: 100px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
