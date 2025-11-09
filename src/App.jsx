@@ -11,6 +11,7 @@ import { Route, Routes } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PaymentHistory from "./pages/PaymentHistory/PaymentHistory";
 import { createContext } from "react";
+import AllUsers from "./pages/AllUsers/AllUsers";
 
 function App() {
  
@@ -51,6 +52,10 @@ function App() {
     {
       path: "/adminHistory",
       element: <AdminHistory/>,
+    },
+    {
+      path : "/allUsers",
+      element : <AllUsers/>
     }
   ]);
 
