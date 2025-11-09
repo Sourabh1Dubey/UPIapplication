@@ -37,15 +37,19 @@ const User = () => {
     };
     try {
       const res = await api.post("/user/create", payload);
-      alert("✅ User created successfully!");
-      setFormData({
-        name: "",
-        mobNo: "",
-        tpin: "",
-        bal: "",
-        accountType: "",
-        bankName: "",
-      });
+      if (res.data === true) {
+        alert("✅ User created successfully!");
+        setFormData({
+          name: "",
+          mobNo: "",
+          tpin: "",
+          bal: "",
+          accountType: "",
+          bankName: "",
+        });
+      } else {
+        alert("🚫 User creation failed: mobile number from blocked country!");
+      }
     } catch (err) {
       console.log(err);
       alert("❌ Failed to create user");
