@@ -45,6 +45,17 @@ const Admin = () => {
             Customize platform settings and maintain overall system security.
           </p>
         </Link>
+         {/* AllUsers */}
+        <Link to="/AllUsers" className="icon-card">
+          <div className="icon-wrapper">
+            <Settings size={60} className="icon-emerald" />
+          </div>
+          <h2 className="icon-title">All Users</h2>
+          <p className="icon-description">
+             Access and monitor User activities.
+          </p>
+        </Link>
+      </div>
       </div>
 
       {/* Footer */}
