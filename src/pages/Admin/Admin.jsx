@@ -45,7 +45,7 @@ const Admin = () => {
             Customize platform settings and maintain overall system security.
           </p>
         </Link>
-         {/* AllUsers */}
+        {/* AllUsers */}
         <Link to="/AllUsers" className="icon-card">
           <div className="icon-wrapper">
             <Settings size={60} className="icon-emerald" />
@@ -55,7 +55,6 @@ const Admin = () => {
              Access and monitor User activities.
           </p>
         </Link>
-      </div>
       </div>
 
       {/* Footer */}
