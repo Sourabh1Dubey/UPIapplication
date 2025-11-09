@@ -25,11 +25,11 @@ const Home = () => {
           <p className="icon-text">Handle transactions securely.</p>
         </Link>
 
-        <Link to="/freeze" className="icon-card">
+        {/* <Link to="/freeze" className="icon-card">
           <Snowflake size={60} className="icon" />
           <h2 className="icon-title">Frozen</h2>
           <p className="icon-text">Temporarily freeze or unfreeze accounts.</p>
-        </Link>
+        </Link> */}
 
         <Link to="/history" className="icon-card">
           <History size={60} className="icon" />

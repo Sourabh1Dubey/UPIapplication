@@ -1,39 +1,55 @@
 import { useEffect, useState } from "react";
-import "../User/User.css"
+import "../User/User.css";
 import { Eye, EyeOff } from "lucide-react";
+import { api } from "../../api/api";
 
-const User = ()=>{
-// For ScrollBar
- useEffect(() => {
-    // Enable scroll when this page is active
+const User = () => {
+  useEffect(() => {
     document.body.style.overflowY = "auto";
     return () => {
-      // Disable scroll when leaving this page
       document.body.style.overflowY = "hidden";
     };
   }, []);
 
-
-
-
-     const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
-    mobile: "",
+    mobNo: "",      // Correct key for your backend
     tpin: "",
-    balance: "",
+    bal: "",
     accountType: "",
     bankName: "",
   });
-  const [showTpin, setShowTpin] = useState(false)
+  const [showTpin, setShowTpin] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("User Data Submitted:\n" + JSON.stringify(formData, null, 2));
+    const payload = {
+      name: formData.name,
+      mobNo: formData.mobNo,           // Must match backend
+      tpin: formData.tpin,
+      bankName: formData.bankName,
+      bal: parseFloat(formData.bal),
+    };
+    try {
+      const res = await api.post("/user/create", payload);
+      alert("✅ User created successfully!");
+      setFormData({
+        name: "",
+        mobNo: "",
+        tpin: "",
+        bal: "",
+        accountType: "",
+        bankName: "",
+      });
+    } catch (err) {
+      console.log(err);
+      alert("❌ Failed to create user");
+    }
   };
 
   return (
@@ -54,14 +70,13 @@ const User = ()=>{
           <label>Mobile</label>
           <input
             type="tel"
-            name="mobile"
-            value={formData.mobile}
+            name="mobNo"          // Must be "mobNo"
+            value={formData.mobNo}
             onChange={handleChange}
             placeholder="Enter mobile number"
             required
           />
 
-            
           <label>T-PIN</label>
           <div className="tpin-container">
             <input
@@ -85,12 +100,11 @@ const User = ()=>{
             </button>
           </div>
 
-
           <label>Balance</label>
           <input
             type="number"
-            name="balance"
-            value={formData.balance}
+            name="bal"
+            value={formData.bal}
             onChange={handleChange}
             placeholder="Enter account balance"
             required
@@ -125,7 +139,7 @@ const User = ()=>{
         </form>
       </div>
     </div>
-    )
+  );
+};
 
-}
 export default User;

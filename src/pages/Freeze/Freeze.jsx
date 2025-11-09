@@ -2,22 +2,25 @@ import React, { useState } from "react";
 import "./Freeze.css";
 import { Snowflake, Unlock } from "lucide-react";
 import {Link} from 'react-router-dom'
+import { api } from "../../api/api";
 
 const Freeze = () => {
 const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleUnfreeze = () => {
+  const handleUnfreeze = async () => {
     if (mobile.trim() === "") {
       setMessage("⚠️ Please enter a mobile number first.");
       return;
     }
-
-   
-
-    setMessage(`✅ Account linked with ${mobile} has been unfrozen successfully.`);
-    setMobile("");
-  };
+    try {
+    const res = await api.post(`/account/unfreeze/${mobile}`);
+    setMessage("✅ " + res.data);
+  } catch (err) {
+    console.error(err);
+    setMessage("❌ Failed to unfreeze account.");
+  }
+};
 
   return (
     <div className="freeze-container">

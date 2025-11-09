@@ -1,0 +1,79 @@
+/* Base container */
+.landing-container {
+  min-height: 100vh;
+  background-color: #0f172a; /* slate-900 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Header */
+.landing-title {
+  color: #34d399; /* emerald-400 */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.landing-subtitle {
+  color: #cbd5e1; /* slate-300 */
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+/* Icon grid layout */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Icon card styling */
+.icon-card {
+  background-color: #1e293b; /* slate-800 */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.icon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.3); /* emerald glow */
+}
+
+/* Icon wrapper */
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon-emerald {
+  color: #34d399; /* emerald-400 */
+}
+
+/* Titles and descriptions */
+.icon-title {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.icon-description {
+  color: #94a3b8; /* slate-400 */
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  color: #64748b; /* slate-500 */
+  font-size: 0.85rem;
+}

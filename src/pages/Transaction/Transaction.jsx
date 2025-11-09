@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Transaction.css";
 import { Eye, EyeOff, Send } from "lucide-react";
 import {Link} from 'react-router-dom'
+import {api} from "../../api/api";
 
 
 const Transaction = () => {
@@ -20,11 +21,24 @@ const Transaction = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Transaction Submitted:\n" + JSON.stringify(formData, null, 2));
-   
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    senderMobile: formData.senderMobile,
+    receiverMobile: formData.receiverMobile,
+    tpin: formData.tpin,
+    amount: parseFloat(formData.amount),
   };
+
+  try {
+    const res = await api.post("/pay", payload);
+    alert("💰 Payment result: " + res.data);
+  } catch (err) {
+    console.error(err);
+    alert("❌ Payment failed");
+  }
+};
 
   return (
     <div className="transaction-container">

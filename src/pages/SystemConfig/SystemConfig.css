@@ -1,0 +1,97 @@
+
+.config-container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #0f172a; /* slate-900 */
+  color: #e2e8f0; /* slate-200 */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+.config-title {
+  color: #34d399; /* emerald-400 */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.config-subtitle {
+  color: #94a3b8; /* slate-400 */
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.config-item {
+  background-color: #1e293b; /* slate-800 */
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.config-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(52, 211, 153, 0.25);
+}
+
+.config-label {
+  display: block;
+  color: #a5b4fc; /* light indigo accent */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.config-input {
+  width: 100%;
+  background-color: #334155; /* slate-700 */
+  border: 1px solid #475569; /* slate-600 */
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  color: #e2e8f0; /* slate-200 */
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Editable Mode */
+.config-input.editable:focus {
+  border-color: #34d399; /* emerald-400 */
+  background-color: #1e293b;
+  outline: none;
+}
+
+/* Readonly Mode */
+.config-input.readonly {
+  background-color: #1e293b;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.update-button {
+  background-color: #34d399; /* emerald-400 */
+  color: #0f172a; /* slate-900 */
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.8rem 2rem;
+  margin-top: 2.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.update-button:hover {
+  background-color: #10b981; /* emerald-500 */
+  transform: scale(1.05);
+}

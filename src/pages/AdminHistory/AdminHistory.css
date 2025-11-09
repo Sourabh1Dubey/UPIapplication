@@ -1,0 +1,75 @@
+.history-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f172a; /* Slate-900 */
+  min-height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.history-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #10b981; /* Emerald-500 */
+  margin-bottom: 1rem;
+}
+
+.add-btn {
+  background-color: #10b981; /* Emerald-500 */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #059669; /* Emerald-600 */
+}
+
+.card-container {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background-color: #1e293b; /* Slate-800 */
+  border-radius: 12px;
+  overflow-y: auto;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.txn-card {
+  background-color: #334155; /* Slate-700 */
+  border-left: 4px solid #10b981; /* Emerald accent */
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.txn-card:hover {
+  background-color: #475569; /* lighter slate */
+}
+
+.txn-card p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.success {
+  color: #22c55e; /* Emerald-400 */
+}
+
+.failed {
+  color: #ef4444; /* Red-500 */
+}
+
+.no-data {
+  text-align: center;
+  color: #94a3b8; /* Slate-400 */
+}
